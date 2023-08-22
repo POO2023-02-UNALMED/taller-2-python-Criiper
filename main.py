@@ -23,21 +23,18 @@ class Motor:
 
 class Auto:
     cantidadCreados = 0
-    def __init__(self, modelo, precio, marca, registro):
+    def __init__(self, modelo, precio, marca, asientos, motor, registro):
         self.modelo = modelo
         self.precio = precio
         self.marca = marca
-        self.motor = None
+        self.motor = motor
         self.registro = registro
-        self.asientos = None
-    
-    asientos = Asiento()
-    motor = Motor()
-
+        self.asientos = asientos
+        
     def cantidadAsientos(self):
         cont = 0
         for i in range(self.asientos):
-            if self.asientos[i].type == Asiento:
+            if self.asientos[i] != None:
                 cont += 1
         
         return cont
